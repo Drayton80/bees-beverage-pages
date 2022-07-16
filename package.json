@@ -16,7 +16,7 @@
   "scripts": {
     "start": "webpack serve --progress --color --config webpack.development.js",
     "build": "webpack --progress --color --config webpack.production.js",
-    "test": "react-scripts test"
+    "lint": "./node_modules/.bin/eslint src"
   },
   "eslintConfig": {
     "extends": [
@@ -43,8 +43,12 @@
     "@babel/preset-typescript": "^7.18.6",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "eslint": "^8.19.0",
+    "eslint-plugin-react": "^7.30.1",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1",
