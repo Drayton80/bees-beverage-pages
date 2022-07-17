@@ -40,7 +40,11 @@ const Breweries: React.FC = () => {
       <main id={BREWERIES}>
         <section>
           {breweries.map((brewery) => (
-            <BreweryCard brewery={brewery} onDeleteClick={handleCardDelete} />
+            <BreweryCard
+              key={brewery.id}
+              brewery={brewery}
+              onDeleteClick={handleCardDelete}
+            />
           ))}
         </section>
       </main>

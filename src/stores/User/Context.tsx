@@ -5,7 +5,9 @@ import { UserStore } from "./types";
 
 const UserContext = React.createContext<UserStore | null>(null);
 
-export const UserProvider = ({ children }) => {
+export const UserProvider: React.FC<{ children?: React.ReactNode }> = ({
+  children,
+}) => {
   const userStore = useLocalStore(createUserStore);
 
   return (
