@@ -8,6 +8,7 @@ import { URL_BREWERIES } from "../../constants/urlRoutes";
 import { LOGIN } from "../../constants/idNames";
 import "./style.less";
 import { useUserStore } from "../../stores/User/Context";
+import InputText from "../../components/InputText";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -16,11 +17,8 @@ const Login: React.FC = () => {
   const [validAge, setValidAge] = useState<boolean>(false);
 
   const handleInputTextChange = (event: React.FormEvent<HTMLInputElement>) => {
-    const isValidName = isValidInputText(event.currentTarget.value);
-
-    if (isValidName) userStore?.setName(event.currentTarget.value);
-
-    setValidName(isValidName);
+    userStore?.setName(event.currentTarget.value);
+    setValidName(isValidInputText(event.currentTarget.value));
   };
 
   const handleCheckboxAgeChange = (event: React.FormEvent<HTMLInputElement>) =>
@@ -31,11 +29,9 @@ const Login: React.FC = () => {
       <main id={LOGIN}>
         <article>
           <section>
-            <p>Please, enter your full name bellow</p>
-            <p>Only alphabetical characters are accepted</p>
-            <input
-              className="input-text"
+            <InputText
               placeholder="Full name"
+              error={userStore?.user.name !== "" && !validName}
               onChange={handleInputTextChange}
             />
           </section>
