@@ -13,12 +13,18 @@ import InputText from "../../components/InputText";
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const userStore = useUserStore();
+  const [inputName, setInputName] = useState<string>("");
   const [validName, setValidName] = useState<boolean>(false);
   const [validAge, setValidAge] = useState<boolean>(false);
 
   const handleInputTextChange = (event: React.FormEvent<HTMLInputElement>) => {
-    userStore?.setName(event.currentTarget.value);
+    setInputName(event.currentTarget.value);
     setValidName(isValidInputText(event.currentTarget.value));
+  };
+
+  const handleEnterClick = () => {
+    userStore?.setName(inputName);
+    navigate(URL_BREWERIES);
   };
 
   const handleCheckboxAgeChange = (event: React.FormEvent<HTMLInputElement>) =>
@@ -30,8 +36,10 @@ const Login: React.FC = () => {
         <article>
           <section>
             <InputText
+              label="Please, enter your full name bellow"
+              warningLabel="Only alphabetical characters are accepted"
               placeholder="Full name"
-              error={userStore?.user.name !== "" && !validName}
+              error={!(inputName === "" || validName)}
               onChange={handleInputTextChange}
             />
           </section>
@@ -43,7 +51,7 @@ const Login: React.FC = () => {
             <button
               className="primary"
               disabled={!validName || !validAge}
-              onClick={() => navigate(URL_BREWERIES)}
+              onClick={handleEnterClick}
             >
               Enter
             </button>
