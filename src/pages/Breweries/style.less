@@ -1,0 +1,33 @@
+@import "../../App.less";
+
+header#breweries {
+  background-color: var(--color-background-primary);
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding-left: var(--size-huge);
+  padding-right: var(--size-huge);
+
+  > h2 {
+    margin-left: auto;
+    margin-right: var(--size-huge);
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 30px;
+  }
+}
+
+main#breweries {
+  background-color: var(--color-background-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--size-colossal);
+
+    max-width: 80%;
+  }
+}
