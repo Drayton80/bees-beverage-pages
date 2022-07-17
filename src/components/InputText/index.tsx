@@ -3,16 +3,16 @@ import { InputTextProps } from "./types";
 import "./style.less";
 
 const InputText: React.FC<InputTextProps> = ({
+  label,
+  warningLabel,
   placeholder,
   error,
   onChange,
 }) => {
   return (
     <>
-      <p>Please, enter your full name bellow</p>
-      <p className={error ? "text-error" : ""}>
-        Only alphabetical characters are accepted
-      </p>
+      <p>{label}</p>
+      <p className={error ? "text-error" : ""}>{warningLabel}</p>
       <input
         className={`input-text ${error ? "input-error" : ""}`}
         placeholder={placeholder}
