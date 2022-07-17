@@ -4,7 +4,7 @@
     "outDir": "./build",
     "sourceMap": true,
     "strictNullChecks": true,
-    "module": "es6",
+    "module": "es2022",
     "jsx": "react",
     "target": "es5",
     "allowJs": true,
