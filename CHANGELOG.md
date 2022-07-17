@@ -5,3 +5,5 @@ This is just an example changelog used to cover some of the functionalities that
 ### To Publish
 
 - **Feature 1:** ESLint and Pipeline configuration
+
+- **Feature 2:** Login Page

@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "bundle.js",
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -20,17 +21,38 @@ module.exports = {
     rules: [
       {
         test: /\.(t|j)sx?$/,
-        use: { loader: "babel-loader" },
         include: path.resolve(__dirname, "src"),
+        use: { loader: "babel-loader" },
       },
       {
-        test: /\.css$/i,
+        test: /\.(le|c)ss$/i,
+        include: path.resolve(__dirname, "src"),
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: "url-loader",
-        options: { limit: false },
+        test: /\.less$/,
+        include: path.resolve(__dirname, "src"),
+        use: [
+          {
+            loader: "less-loader",
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "public/[hash]-[name].[ext]",
+            },
+          },
+        ],
       },
     ],
   },
