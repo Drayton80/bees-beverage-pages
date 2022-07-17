@@ -4,8 +4,10 @@ This is just an example changelog used to cover some of the functionalities that
 
 ### To Publish
 
-- **Feature 1:** ESLint and Pipeline configuration
+### Version 1
+
+- **Feature 3:** Breweries Page and State Management
 
 - **Feature 2:** Login Page
 
-- **Feature 3:** Breweries Page and State Management
+- **Feature 1:** ESLint and Pipeline configuration
