@@ -1,0 +1,46 @@
+.brewery-card {
+  border: 1px solid #000000;
+  border-radius: var(--size-small);
+  margin: var(--size-gargantuan);
+  width: 350px;
+  height: auto;
+  min-height: 150px;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  padding: var(--size-huge);
+  background-color: var(--color-background-tertiary);
+
+  > header {
+    display: flex;
+    justify-content: stretch;
+
+    > button {
+      align-self: flex-start;
+      justify-self: flex-end;
+      background: none;
+      margin-left: auto;
+    }
+  }
+
+  > section {
+    margin-bottom: var(--size-huge);
+
+    > p {
+      white-space: pre-line;
+      line-height: 2em;
+      color: var(--color-text-dark-secondary);
+      margin: 0;
+    }
+  }
+}
+
+.section-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  > button {
+    margin-right: var(--size-large);
+    margin-bottom: var(--size-huge);
+  }
+}
