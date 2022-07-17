@@ -1,8 +1,9 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { URL_LOGIN, URL_BREWERIES } from "./constants/urlRoutes";
-import Breweries from "./pages/Breweries";
 import Login from "./pages/Login";
+
+const Breweries = lazy(() => import("./pages/Breweries"));
 
 const App: React.FC = () => {
   return (
@@ -10,7 +11,14 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Navigate to={URL_LOGIN} />} />
         <Route path={URL_LOGIN} element={<Login />} />
-        <Route path={URL_BREWERIES} element={<Breweries />} />
+        <Route
+          path={URL_BREWERIES}
+          element={
+            <Suspense>
+              <Breweries />
+            </Suspense>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -4,6 +4,8 @@ This is just an example changelog used to cover some of the functionalities that
 
 ### To Publish
 
+- **Feature 6:** Lazy Loading in Breweries Page
+
 - **Fix 5:** Visual Feedback error when going to Breweries page and then going back to Login
 
 - **Feature 4:** Visual Feedback when User's Name is not valid in the Login Page
