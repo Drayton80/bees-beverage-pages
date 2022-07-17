@@ -19,9 +19,11 @@ This project was built using `React v18` with the npx's `create-react-app` that 
 
 With the Webpack I choosed to split it in three parts, one that hold the [development configurations](webpack.development.js) (used in the Basic Usage category), one with a [basic production](webpack.production.js) config with minification (that can be built using the command `yarn build`), and one with the configs that are [common](webpack.common.js) to the other two.
 
-## CI
+## Git and CI
 
-To better maintain the code's arrangement, it was coded a simple pipeline using the Github actions and CI that only have two steps: one to build the project using the yarn commands and other that use the ESLint to check the code. The running stances of the pipe can be checked [here](https://github.com/Drayton80/bees-beverage-pages/actions).
+To better maintain the code's arrangement, it was coded a simple pipeline using the Github CI and actions. The pipe only have two steps: one to build the project using the yarn commands and other that use the ESLint to check the code. The running stances of the pipe can be checked [here](https://github.com/Drayton80/bees-beverage-pages/actions).
+
+I also tried to follow the git flow arranging the project in a dev and a master branch, with the dev only receiving updates from Pull Requests of branchs of features/refactors/fixes and the master only been updated with the "release" of new versions.
 
 ## State Management
 
