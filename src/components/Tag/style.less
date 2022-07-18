@@ -2,14 +2,30 @@
   display: flex;
   align-items: center;
   border-radius: var(--size-gargantuan);
+  background-color: var(--color-background-primary);
   height: 32px;
 
   &:disabled {
     background-color: var(--color-background-primary);
   }
 
-  & > p {
+  > button {
+    background: none;
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+  }
+
+  > p {
     margin-left: var(--size-medium);
     color: var(--color-text-dark-secondary);
+  }
+
+  > input {
+    margin-left: var(--size-medium);
+    border: 1px solid #d4d4d8;
+    border-radius: var(--size-small);
+    max-width: 70px;
   }
 }

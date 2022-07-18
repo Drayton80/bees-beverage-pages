@@ -4,6 +4,8 @@ This is just an example changelog used to cover some of the functionalities that
 
 ### To Publish
 
+- **Feature 7:** Add more Tag and also Breweries in User Store.
+
 - **Feature 6:** Lazy Loading in Breweries Page
 
 - **Fix 5:** Visual Feedback error when going to Breweries page and then going back to Login
