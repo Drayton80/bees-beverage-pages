@@ -1,6 +1,6 @@
-import { BreweryInfo } from "../../services/Breweries/types";
+import { BreweryWithCustomTag } from "../../stores/User/types";
 
 export type BreweryCardProps = {
-  brewery: BreweryInfo;
+  brewery: BreweryWithCustomTag;
   onDeleteClick: MouseEvent<HTMLButtonElement>;
 };

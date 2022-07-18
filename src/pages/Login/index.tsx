@@ -6,21 +6,30 @@ import { isValidInputText } from "../../commons/utils";
 import { useNavigate } from "react-router";
 import { URL_BREWERIES } from "../../constants/urlRoutes";
 import { LOGIN } from "../../constants/idNames";
-import "./style.less";
 import { useUserStore } from "../../stores/User/Context";
+import breweriesService from "../../services/Breweries";
+import InputText from "../../components/InputText";
+import "./style.less";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const userStore = useUserStore();
+  const [inputName, setInputName] = useState<string>("");
   const [validName, setValidName] = useState<boolean>(false);
   const [validAge, setValidAge] = useState<boolean>(false);
 
   const handleInputTextChange = (event: React.FormEvent<HTMLInputElement>) => {
-    const isValidName = isValidInputText(event.currentTarget.value);
+    setInputName(event.currentTarget.value);
+    setValidName(isValidInputText(event.currentTarget.value));
+  };
 
-    if (isValidName) userStore?.setName(event.currentTarget.value);
-
-    setValidName(isValidName);
+  const handleEnterClick = async () => {
+    if (userStore?.user.name !== inputName) {
+      const breweries = (await breweriesService.getAll())?.data;
+      userStore?.setBreweries(userStore?.user, breweries);
+      userStore?.setName(userStore?.user, inputName);
+    }
+    navigate(URL_BREWERIES);
   };
 
   const handleCheckboxAgeChange = (event: React.FormEvent<HTMLInputElement>) =>
@@ -31,11 +40,11 @@ const Login: React.FC = () => {
       <main id={LOGIN}>
         <article>
           <section>
-            <p>Please, enter your full name bellow</p>
-            <p>Only alphabetical characters are accepted</p>
-            <input
-              className="input-text"
+            <InputText
+              label="Please, enter your full name bellow"
+              warningLabel="Only alphabetical characters are accepted"
               placeholder="Full name"
+              error={!(inputName === "" || validName)}
               onChange={handleInputTextChange}
             />
           </section>
@@ -47,7 +56,7 @@ const Login: React.FC = () => {
             <button
               className="primary"
               disabled={!validName || !validAge}
-              onClick={() => navigate(URL_BREWERIES)}
+              onClick={handleEnterClick}
             >
               Enter
             </button>
