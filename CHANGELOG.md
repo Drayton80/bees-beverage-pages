@@ -2,7 +2,7 @@
 
 This is just an example changelog used to cover some of the functionalities that are been added to this challenge project.
 
-### To Publish
+### Version 3
 
 - **Fix 8:** State loss on Page Refresh
 
