@@ -3,13 +3,14 @@ import { BreweryInfo } from "../../services/Breweries/types";
 export type BreweryWithCustomTag = BreweryInfo & { customTags: string[] };
 
 export interface User {
-  name: string;
-  breweries: BreweryWithCustomTag[];
+  name?: string;
+  breweries?: BreweryWithCustomTag[];
 }
 
 export interface UserStore {
   user: User;
-  set: (user: User) => void;
+  getName: () => string;
+  getBreweries: () => BreweryWithCustomTag[];
   setName: (state: User, name: string) => void;
   setBreweries: (state: User, breweries: BreweryInfo[]) => void;
   deleteBrewery: (state: User, breweryId: string) => void;

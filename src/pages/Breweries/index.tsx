@@ -22,11 +22,11 @@ const Breweries: React.FC = observer(() => {
         <nav>
           <BackButton onClick={() => navigate(URL_LOGIN)} />
         </nav>
-        <h2>{userStore?.user.name}</h2>
+        <h2>{userStore?.getName()}</h2>
       </header>
       <main id={BREWERIES}>
         <section>
-          {userStore?.user.breweries.map((brewery) => (
+          {userStore?.getBreweries().map((brewery) => (
             <BreweryCard
               key={brewery.id}
               brewery={brewery}
