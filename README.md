@@ -1,4 +1,4 @@
-# Basic Usage
+# How to Run
 
 To run the project in development mode, you only need to execute the two commands bellow:
 
@@ -11,7 +11,19 @@ And after, you can open that link http://localhost:3000/ in your browser to see 
 
 # Showcase
 
-# Project's Tools
+https://user-images.githubusercontent.com/22939992/179435753-b8af7891-5684-46cb-9e51-b326ca9f5adc.mp4
+
+# Bonus Challenges Completed
+
+- Implement using Typescript
+- Save user name in the global state (feel free to use any tool/library)
+- Responsivity
+- Implement add more feature
+- Lazy Loading
+- Validate if the user entered only valid characters in the first screen
+- Showing your work through your Git commit history
+
+# Tools
 
 This project was built using `React v18` with the npx's `create-react-app` that gave the basic config files, but most of them, like Webpack, Tsconfig and Eslintrc were reconfigured from scratch so that it was possible to have a better control of the code's transpilation and lint check.
 
@@ -101,13 +113,3 @@ I organized the project's src directory by categories (like components, pages, s
 ├── yarn-error.log
 └── yarn.lock
 ```
-
-# Bonus Challenges Completed
-
-- Implement using Typescript
-- Save user name in the global state (feel free to use any tool/library)
-- Responsivity
-- Implement add more feature
-- Lazy Loading
-- Validate if the user entered only valid characters in the first screen
-- Showing your work through your Git commit history
