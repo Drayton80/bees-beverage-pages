@@ -6,9 +6,10 @@ import { isValidInputText } from "../../commons/utils";
 import { useNavigate } from "react-router";
 import { URL_BREWERIES } from "../../constants/urlRoutes";
 import { LOGIN } from "../../constants/idNames";
-import "./style.less";
 import { useUserStore } from "../../stores/User/Context";
+import breweriesService from "../../services/Breweries";
 import InputText from "../../components/InputText";
+import "./style.less";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -22,8 +23,12 @@ const Login: React.FC = () => {
     setValidName(isValidInputText(event.currentTarget.value));
   };
 
-  const handleEnterClick = () => {
-    userStore?.setName(inputName);
+  const handleEnterClick = async () => {
+    if (userStore?.user.name !== inputName) {
+      const breweries = (await breweriesService.getAll())?.data;
+      userStore?.setBreweries(userStore?.user, breweries);
+      userStore?.setName(userStore?.user, inputName);
+    }
     navigate(URL_BREWERIES);
   };
 
