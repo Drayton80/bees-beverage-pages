@@ -33,7 +33,7 @@ With the Webpack I choosed to split it in three parts, one that hold the [develo
 
 ## Git and CI
 
-To better maintain the code's arrangement, it was coded a simple pipeline using the Github CI and actions. The pipe only have two steps: one to build the project using the yarn commands and other that use the ESLint to check the code. The running stances of the pipe can be checked [here](https://github.com/Drayton80/bees-beverage-pages/actions).
+To better maintain the code's arrangement, it was coded a simple pipeline using the Github CI and actions. The pipe only have two steps: one to build the project using the yarn commands and other that use the ESLint to check the code. The running stances of the pipe can be checked [here](https://github.com/Drayton80/bees-breweries-pages/actions).
 
 I also tried to follow the git flow, arranging the project in a dev and a master branch, with the dev only receiving updates from Pull Requests of features/refactors/fixes branches and the master only been updated with the "release" of new versions.
 
