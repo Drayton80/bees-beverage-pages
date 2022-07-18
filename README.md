@@ -29,7 +29,11 @@ This project was built using `React v18` with the npx's `create-react-app` that 
 
 ## Webpack
 
-With the Webpack I choosed to split it in three parts, one that hold the [development configurations](webpack.development.js) (used in the Basic Usage category), one with a [basic production](webpack.production.js) config with minification (that can be built using the command `yarn build`), and one with the configs that are [common to the other two](webpack.common.js).
+With the Webpack I choosed to split it in three parts, one that hold the [development](webpack.development.js) configurations (used in the Basic Usage category), one with a very basic [production](webpack.production.js) config with minification, and one with the configs that are [common](webpack.common.js) to the other two. If you want to run the code with the production configuration, it's possible using the command bellow after the installation of the dependecies.
+
+```bash
+yarn build
+```
 
 ## Git and CI
 
