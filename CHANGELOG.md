@@ -2,6 +2,10 @@
 
 This is just an example changelog used to cover some of the functionalities that are been added to this challenge project.
 
+### Version 3
+
+- **Fix 8:** State loss on Page Refresh
+
 ### Version 2
 
 - **Feature 7:** Add more Tag and also Breweries in User Store.

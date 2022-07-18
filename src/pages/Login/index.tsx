@@ -24,7 +24,7 @@ const Login: React.FC = () => {
   };
 
   const handleEnterClick = async () => {
-    if (userStore?.user.name !== inputName) {
+    if (userStore?.getName() !== inputName) {
       const breweries = (await breweriesService.getAll())?.data;
       userStore?.setBreweries(userStore?.user, breweries);
       userStore?.setName(userStore?.user, inputName);
